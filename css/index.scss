@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+$primarycolor: #fcfcfc;
+
+$primaryfont: ' black mustang';
+$secondaryfont: 'florensa';
+
+@font-face {
+    font-family: $primaryfont;
+    src: url("/fonts/impossible/IMPOS0__.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: $secondaryfont;
+    src: url("/fonts/florensa/Florensa-Demo.ttf") format('truetype');
+}
+body{
+    font-family: "PP Neue Montreal";
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    header{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        z-index: 10;
+        position: absolute;
+        top: 0%;
+        left: 0;
+        padding: 2rem;
+        @media (min-width: 706px) and (max-width: 1999px) {
+            justify-content: space-between;
+        }
+        }
+        .logo{
+            h1{
+            display: none;
+            font-size: 1rem;
+            font-family: $secondaryfont;
+            color:$primarycolor;
+            @media (min-width: 706px) and (max-width: 1999px) {
+                display: block;
+                }
+            }
+        }
+        h1{
+            font-size: 1rem;
+            font-family: $secondaryfont;
+            color:$primarycolor;
+            
+        }
+        a{
+            display: none;
+            font-size: 1rem;
+            font-family: $secondaryfont;
+            color: #fff;;
+            transition: .7s;
+            font-weight: 900;
+            z-index: 1000;
+            cursor: pointer;
+            @media (min-width: 706px) and (max-width: 1999px) {
+                display: block;
+                }
+             &:hover{
+                color: rgb(255, 0, 0);
+                opacity: 1;
+            }
+        }
+    }
+    .left{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 20;
+        padding: 2rem;
+        color: $primarycolor;
+        font-family: $secondaryfont;
+        font-size: .8rem;
+        @media (min-width: 706px) and (max-width: 1999px) {
+            display: block;
+            }
+    }
+    .right{
+        position: absolute;
+        top: 90%;
+        right: 0;
+        z-index: 20;
+        padding: 2rem;
+        color: $primarycolor;
+        font-family: $secondaryfont;
+        font-size: .8rem;
+    }
+    .slider{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        .slide-active{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+        }   
+        .slide-next{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .slide-next-img{
+                width: 250px;
+                height: 350px;
+                clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+                pointer-events: none;
+            }
+        }
+    }
+    .slider-content{
+        position: absolute;
+        left: 2rem;
+        bottom: 0;
+        width: 100%;
+        height: 175px;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        .slider-content-active{
+            position: absolute;
+            top: 0;
+            left: 0;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            // Define custom property for font size clamping
+            --font-size-clamp: clamp(2rem, 2vw, 4rem); // 2rem font size for phones
+
+            h1 {
+                font-size: var(--font-size-clamp); // Use the custom property for font size
+                color: orangered;
+                font-family: $primaryfont;
+                letter-spacing: 5px;
+                @media (min-width: 706px) and (max-width: 1999px) {
+                    font-size: clamp(4rem, 4vw, 7rem);
+                    font-size: clamp(7rem, 7vw, 10rem);
+                    letter-spacing: 0px;
+
+                    }
+            }
+        }
+        .slider-content-next{
+            position: absolute;
+            top: 200px;
+            left: 0;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+           position: relative;
+            
+        }
+    }
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+
+}
+
+p,a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+span{
+    z-index: 1000;
+    position: relative;
+}
+  
+
+// @media screen and (min-width: 706px) and (max-width: 1999px) {
+//     header{
+//         .logo{
+//             h1{
+//             display: none;
+//             }
+//         }
+//         h1{
+//             font-size: 1rem;
+//             font-family: $secondaryfont;
+//             color:$primarycolor;
+//         }
+//         a{
+//             display: none;
+//         }
+//     }
+// }
